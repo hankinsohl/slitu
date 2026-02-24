@@ -1,0 +1,14 @@
+[
+  {
+    "asset_type_id": 16,
+    "asset_type": "liquid"
+  },
+  {
+    "asset_type_id": 17,
+    "asset_type": "illiquid"
+  },
+  {
+    "asset_type_id": 18,
+    "asset_type": "unsalable"
+  }
+]

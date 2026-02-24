@@ -1,0 +1,11 @@
+[
+  {
+    "asset_type": "liquid"
+  },
+  {
+    "asset_type": "illiquid"
+  },
+  {
+    "asset_type": "unsalable"
+  }
+]
