@@ -1,11 +1,11 @@
 ### About
 
-slitu is a set of miscellaneous functions used in some of my Rust projects.
+Slitu is a set of miscellaneous Rust modules used in some of my projects.
 
 ### Disclaimer
 
-slitu is tested, but unstable, subject to frequent breaking changes.
+Slitu is tested, but unstable, subject to frequent breaking changes.
 
 ### License
 
-slitu is licensed under the MIT License.
+Slitu is licensed under the MIT License.
