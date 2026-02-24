@@ -13,6 +13,10 @@ pub struct Timestamp {
     pub time: DateTime<Utc>,
 }
 
+impl AsRef<DateTime<Utc>> for Timestamp {
+    fn as_ref(&self) -> &DateTime<Utc> {&self.time}
+}
+
 impl Default for Timestamp {
     /// Creates a Timestamp for the current time.
     fn default() -> Self {
