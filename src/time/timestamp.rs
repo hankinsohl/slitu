@@ -2,8 +2,12 @@
 // This software is licensed under the terms of the MIT License.
 // Created by Hankinsohl on 2/24/2026.
 
+use anyhow::{Error, Result};
 use chrono::prelude::*;
 use serde::{Deserialize, Serialize};
+use std::fs::File;
+use std::io::{BufReader, Read};
+use std::path::Path;
 
 /// Timestamp is a struct used to record and compare times.  Timestamp is based on UTC and is thus suitable for
 /// comparing times obtained from different computers.  Timestamp uses serde to serialize/deserialize to/from
@@ -35,6 +39,18 @@ impl Timestamp {
         Self {
             time,
         }
+    }
+
+    /// Creates a Timestamp using JSON stored in path.
+    pub fn from_path<P: AsRef<Path>>(path: P) -> Result<Self, Error> {
+        let file = File::open(path.as_ref())?;
+        let mut reader = BufReader::new(file);
+        Timestamp::from_reader(&mut reader)
+    }
+
+    /// Creates a Timestamp using JSON read from reader.
+    pub fn from_reader(reader: &mut dyn Read) -> Result<Self, Error> {
+        Ok(serde_json::from_reader(reader)?)
     }
 
     /// Returns true if this Timestamp is as new or newer than other.
