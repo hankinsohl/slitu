@@ -10,7 +10,7 @@ use serde::{Deserialize, Serialize};
 /// JSON.
 #[derive(Debug, Deserialize, Eq, Hash, Ord, PartialEq, PartialOrd, Serialize)]
 pub struct Timestamp {
-    pub time: DateTime<Utc>,
+    time: DateTime<Utc>,
 }
 
 impl AsRef<DateTime<Utc>> for Timestamp {
