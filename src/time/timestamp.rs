@@ -14,7 +14,7 @@ pub struct Timestamp {
 }
 
 impl AsRef<DateTime<Utc>> for Timestamp {
-    fn as_ref(&self) -> &DateTime<Utc> {&self.time}
+    fn as_ref(&self) -> &DateTime<Utc> { &self.time }
 }
 
 impl Default for Timestamp {
